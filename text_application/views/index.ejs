@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .time--sent{
+      font-size: 12px;
+      margin: 20px 0;
+      color: grey;
+      text-shadow: 100;
+    }
+    .username{
+      font-size: 18px;
+    }
+    .chat--box{
+      border: 1px solid grey;
+      width: 300px;
+      padding: 20px;
+      margin: 15px 10px;
+      border-radius: 4px ;
+    }
+    .chat--box>h1{
+      font-family: sans-serif;
+      margin: 10px;
+      text-decoration: underline;
+      font-size: 25px;
+    }
+    .link--send{
+      margin: 50px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+    <h1><%=title %></h1>
+    <% data.forEach(message => { %>
+      <div class="chat--box">
+        <h1><%=message.name %></h1>
+        <p class="username"><%=message.text %></p>
+        <p class="time--sent"><%=message.sent_time %></p>
+      </div>
+    <% }) %>
+
+
+    <p class="link--send"><a href="/form">Send a message</a></p>
+</body>
+</html>
